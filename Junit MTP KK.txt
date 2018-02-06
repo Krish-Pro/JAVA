@@ -1,0 +1,38 @@
+package com.dthoperator.junit;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+import com.dthoperator.exception.RechargeException;
+import com.dthoperator.service.*;
+
+public class Validator_Junit {
+	
+	
+
+	@Test
+	public void test_Operator() throws RechargeException {
+		Assert.assertEquals(true,RechargeDataValidator.validatedthOperator("Airtel"));
+
+	}
+	
+	@Test
+	public void test_ConsumerNumber() throws RechargeException {
+		Assert.assertEquals(true,RechargeDataValidator.validateConsumerNo("1234512345"));
+
+	}
+	
+	@Test
+	public void test_RechargePlan() throws RechargeException {
+		Assert.assertEquals(true,RechargeDataValidator.validatePlan("Annual"));
+
+	}
+
+	@Test
+	public void test_RechargeAmount() throws RechargeException {
+		Assert.assertEquals(true,RechargeDataValidator.validateAmount("450"));
+
+	}
+}
